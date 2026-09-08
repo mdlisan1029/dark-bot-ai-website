@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Affiliate Login — Dark Bot AI</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body class="portal-shell">
+  <main class="portal-main">
+    <div class="container">
+      <div class="portal-card">
+        <div class="portal-brand">
+          <div class="portal-kicker">DARK BOT AI · AFFILIATE PORTAL</div>
+          <h1 class="portal-title">Affiliate Login</h1>
+          <p class="portal-subtitle">Sign in to view your referral performance, customers, revenue and commission status.</p>
+        </div>
+
+        <form id="affiliate-login-form" class="portal-form" novalidate>
+          <label>
+            Email
+            <input id="email" type="email" autocomplete="email" required placeholder="you@example.com">
+          </label>
+          <label>
+            Password
+            <input id="password" type="password" autocomplete="current-password" required placeholder="Your password">
+          </label>
+          <div class="portal-actions">
+            <button id="login-btn" class="btn btn-primary" type="submit">Sign in</button>
+            <button id="reset-btn" class="btn btn-ghost" type="button">Set / Reset Password</button>
+          </div>
+          <div id="portal-message" class="portal-message" role="status" aria-live="polite"></div>
+        </form>
+
+        <div class="portal-divider"></div>
+        <div class="portal-links">
+          <a href="../index.html">← Back to Dark Bot AI</a>
+          <span>Affiliate accounts are created/approved by admin.</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../config/supabase-config.js"></script>
+  <script src="../js/affiliate-auth.js"></script>
+  <script>
+    DarkBotAffiliateAuth.initLoginPage({
+      messageId: 'portal-message',
+      formId: 'affiliate-login-form',
+      emailId: 'email',
+      passwordId: 'password',
+      loginButtonId: 'login-btn',
+      resetButtonId: 'reset-btn',
+      redirectPath: 'affiliate-dashboard.html'
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Affiliate Dashboard — Dark Bot AI</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body class="portal-shell">
+  <main class="portal-main">
+    <div class="container portal-card wide">
+      <div class="portal-top">
+        <div>
+          <div class="portal-kicker">DARK BOT AI · AFFILIATE PORTAL</div>
+          <h1 class="portal-title">Dashboard</h1>
+          <p id="affiliate-identity" class="portal-subtitle">Loading affiliate account…</p>
+        </div>
+        <button id="logout-btn" class="btn btn-ghost" type="button">Sign out</button>
+      </div>
+
+      <div id="dashboard-message" class="portal-message" role="status" aria-live="polite"></div>
+
+      <section class="portal-grid" aria-label="Affiliate statistics">
+        <div class="portal-stat"><span>Referral Visits</span><strong id="stat-visits">—</strong></div>
+        <div class="portal-stat"><span>Telegram Clicks</span><strong id="stat-telegram">—</strong></div>
+        <div class="portal-stat"><span>Paid Customers</span><strong id="stat-paid">—</strong></div>
+        <div class="portal-stat"><span>Revenue</span><strong id="stat-revenue">—</strong></div>
+      </section>
+
+      <section class="portal-panel">
+        <div class="portal-panel-head"><h3>Your referral link</h3><span id="affiliate-status" class="status-pill warn">Loading</span></div>
+        <div style="padding:18px 20px">
+          <div class="referral-box">
+            <code id="referral-link">Loading…</code>
+            <button id="copy-link-btn" class="btn btn-small" type="button">Copy</button>
+          </div>
+          <p id="affiliate-details" class="portal-note" style="margin:12px 0 0">—</p>
+        </div>
+      </section>
+
+      <section class="portal-grid" style="margin-top:14px">
+        <div class="portal-stat"><span>Commission Earned</span><strong id="stat-earned">—</strong></div>
+        <div class="portal-stat"><span>Pending Commission</span><strong id="stat-pending">—</strong></div>
+        <div class="portal-stat"><span>Commission Paid</span><strong id="stat-paid-commission">—</strong></div>
+        <div class="portal-stat"><span>Conversion Rate</span><strong id="stat-conversion">—</strong></div>
+      </section>
+
+      <section class="portal-panel">
+        <div class="portal-panel-head"><h3>Your attributed customers</h3><span id="customer-count" class="portal-note">—</span></div>
+        <div class="portal-table-wrap">
+          <table class="portal-table">
+            <thead><tr><th>Customer</th><th>Telegram</th><th>Plan</th><th>Payment</th><th>Status</th><th>Revenue</th></tr></thead>
+            <tbody id="customers-body"><tr><td colspan="6">Loading…</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+
+      <p class="portal-note" style="margin:18px 2px 0">Commission is calculated and approved by Dark Bot AI admin. Customer attribution is read-only for affiliates.</p>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../config/supabase-config.js"></script>
+  <script src="../js/affiliate-auth.js"></script>
+  <script src="../js/affiliate-dashboard.js"></script>
+</body>
+</html>
